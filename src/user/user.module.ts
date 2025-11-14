@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { InfraModule } from 'src/infra/infra.module';
+import { InfraModule } from '../infra/infra.module';
 import { UserService } from './user.service';
 import { UserRepository } from './user.repository';
 import { UserController } from './user.controller';
