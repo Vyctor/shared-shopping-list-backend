@@ -93,7 +93,7 @@ export class ShoppingListItemRepository {
     if (input.user) {
       Object.assign(propsToBeUpdated, { user: input.user });
     }
-    if (input.isPurchased) {
+    if (input.isPurchased !== undefined) {
       Object.assign(propsToBeUpdated, { isPurchased: input.isPurchased });
     }
 

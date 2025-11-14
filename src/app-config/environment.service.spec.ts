@@ -64,6 +64,37 @@ describe('EnvironmentService', () => {
       expect(result).toBe(mockExpiresIn);
       expect(configService.getOrThrow).toHaveBeenCalledWith('JWT_EXPIRES_IN');
     });
+
+    it('deve lançar erro quando JWT_EXPIRES_IN não está configurado', () => {
+      configService.getOrThrow.mockImplementation(() => {
+        throw new Error('Config key JWT_EXPIRES_IN not found');
+      });
+
+      expect(() => service.JWT_EXPIRES_IN).toThrow();
+      expect(configService.getOrThrow).toHaveBeenCalledWith('JWT_EXPIRES_IN');
+    });
+  });
+
+  describe('APP_PORT', () => {
+    it('deve lançar erro quando APP_PORT não está configurado', () => {
+      configService.getOrThrow.mockImplementation(() => {
+        throw new Error('Config key APP_PORT not found');
+      });
+
+      expect(() => service.APP_PORT).toThrow();
+      expect(configService.getOrThrow).toHaveBeenCalledWith('APP_PORT');
+    });
+  });
+
+  describe('JWT_SECRET', () => {
+    it('deve lançar erro quando JWT_SECRET não está configurado', () => {
+      configService.getOrThrow.mockImplementation(() => {
+        throw new Error('Config key JWT_SECRET not found');
+      });
+
+      expect(() => service.JWT_SECRET).toThrow();
+      expect(configService.getOrThrow).toHaveBeenCalledWith('JWT_SECRET');
+    });
   });
 });
 
