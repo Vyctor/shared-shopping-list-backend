@@ -1,6 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { ShoppingListItemRepository } from './shopping-list-item.repository';
-import * as nestjsFirebase from 'nestjs-firebase';
 import { ShoppingListItem } from './entities/shopping-list-item';
 
 describe('ShoppingListItemRepository', () => {
